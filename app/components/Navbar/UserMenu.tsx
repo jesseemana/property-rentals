@@ -1,14 +1,15 @@
 'use client'
 
-import { AiOutlineMenu } from 'react-icons/ai'
 import Avatar from '../Avatar'
+import { AiOutlineMenu } from 'react-icons/ai'
 import { useState, useCallback } from 'react'
+import MenuItem from './MenuItem'
 
 const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleOpen = useCallback(() => {
-    setIsOpen((value) => !value)
+    setIsOpen((prev) => !prev)
   }, [])
 
   return (
@@ -16,13 +17,13 @@ const UserMenu = () => {
         <div className='flex flex-row items-center gap-3'>
             <div 
                 onClick={() => {}} 
-                className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'
+                className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer capitalize'
             >
-                Add Your Home
+                add your place
             </div>
             <div 
                 onClick={toggleOpen} 
-                className='py-4 border-[1px] md:py-1 md:px-3 rounded-full hover:bg-neutral-200 flex flex-row items-center transition cursor-pointer'
+                className='py-4 border-[1px] md:py-1 md:px-3 rounded-full hover:bg-neutral-200 hover:shadow-md gap-3 flex flex-row items-center transition cursor-pointer'
             >
                 <AiOutlineMenu />
                 <div className='hidden md:block'>
@@ -32,10 +33,18 @@ const UserMenu = () => {
         </div>
 
         {isOpen && (
-            <div className='absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm'
-            >
-                <div className=''>
-
+            <div className='absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm'>
+                <div className="flex flex-col cursor-pointer">
+                    <>
+                        <MenuItem 
+                            label='Login' 
+                            onClick={() => {}}
+                        />
+                        <MenuItem 
+                            label='Sign Up' 
+                            onClick={() => {}}
+                        />
+                    </>
                 </div>
             </div>
         )}
