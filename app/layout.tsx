@@ -1,5 +1,6 @@
 // import { Nunito } from 'next/font/google'
 
+import ClientOnly from './components/ClientOnly';
 import Navbar from './components/Navbar/Navbar'
 import './globals.css'
 
@@ -20,7 +21,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className=''>
       {/* <body className={font.className}> */}
         <div className="">
-          <Navbar />
+          <ClientOnly>
+            <Navbar />
+          </ClientOnly>
           {children}
         </div>
       </body>
