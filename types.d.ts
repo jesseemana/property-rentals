@@ -39,6 +39,23 @@ interface RegisterModalStore {
   onClose: () => void;
 }
 
+interface HeadingProps {
+  title: string;
+  subtitle?: string;
+  center?: boolean;
+}
+
+interface InputProps {
+  id: string;
+  label: string;
+  type?: string;
+  disabled?: boolean;
+  formatPrice?: boolean;
+  required?: boolean;
+  register: UseFormRegister<FieldValues>,
+  errors: FieldErrors
+}
+
 
 
 
