@@ -39,6 +39,12 @@ interface RegisterModalStore {
   onClose: () => void;
 }
 
+interface LoginModalStore {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}
+
 interface HeadingProps {
   title: string;
   subtitle?: string;

@@ -2,6 +2,7 @@
 
 import Navbar from './components/Navbar/Navbar'
 import RegisterModal from './components/Modals/RegisterModal'
+import LoginModal from './components/Modals/LoginModal'
 
 import ToasterProvider from './providers/ToasterProvider'
 
@@ -24,6 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <ClientOnly>
             <ToasterProvider />
             <RegisterModal />
+            <LoginModal />
             <Navbar />
           </ClientOnly>
           {children}
