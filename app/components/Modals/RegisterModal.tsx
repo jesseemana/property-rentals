@@ -12,7 +12,10 @@ import Modal from './Modal'
 import Heading from '../Heading'
 import Input from '../../inputs/Input'
 
+
 import useRegisterModal from '@/app/hooks/useRegisterModal'
+
+
 
 
 
@@ -20,6 +23,7 @@ import useRegisterModal from '@/app/hooks/useRegisterModal'
 const RegisterModal = () => {
   const [isLoading, setIsLoading] = useState(false)
   const registerModal = useRegisterModal()
+
   //   const loginModal = useLoginModal()
 
 
@@ -42,7 +46,7 @@ const RegisterModal = () => {
       registerModal.onClose()
     })
     .catch((error) => {
-      toast.error(error)
+      toast.error('Something Went Wrong!')
       console.log(error)
     })
     .finally(() => {
