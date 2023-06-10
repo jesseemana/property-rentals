@@ -36,20 +36,20 @@ const LoginModal = () => {
     setIsLoading(true);
 
     signIn('credentials', {
-        ...data,
-        redirect: false
+      ...data,
+      redirect: false
     })
     .then((callback) => {
         setIsLoading(false)
 
         if(callback?.ok) {
-            toast.success('Logged In')
-            router.refresh()
-            loginModal.onClose()
+          toast.success('Logged In')
+          router.refresh()
+          loginModal.onClose()
         }
 
         if(callback?.error) {
-            toast.error(callback.error)
+          toast.error(callback.error)
         }
     })
   }
@@ -87,13 +87,13 @@ const LoginModal = () => {
         outline
         label='Continue With Google'
         icon={FcGoogle}
-        onClick={() => {} }
+        onClick={() => signIn('google')}
       />
       <Button 
         outline
         label='Continue With Github'
         icon={AiFillGithub}
-        onClick={() => {} }
+        onClick={() => signIn('github')}
       />
       <div className='text-neutral-500 text-center mt-4 font-light'>
         <p>Already have an account?

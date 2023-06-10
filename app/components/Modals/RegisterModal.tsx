@@ -7,20 +7,18 @@ import { useCallback, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 
-
 import Modal from './Modal'
 import Heading from '../Heading'
 import Input from '../../inputs/Input'
 import Button from '../Button'
 
 import useRegisterModal from '@/app/hooks/useRegisterModal'
+import { signIn } from 'next-auth/react'
 
 
 const RegisterModal = () => {
   const [isLoading, setIsLoading] = useState(false)
   const registerModal = useRegisterModal()
-
-  //   const loginModal = useLoginModal()
 
 
   // useForm from react-hook-form
@@ -34,7 +32,7 @@ const RegisterModal = () => {
 
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    setIsLoading(true);
+    setIsLoading(true)
 
     axios.post('/api/register', data)
     .then(() => {
@@ -91,13 +89,13 @@ const RegisterModal = () => {
         outline
         label='Continue With Google'
         icon={FcGoogle}
-        onClick={() => {} }
+        onClick={() => signIn('google')}
       />
       <Button 
         outline
         label='Continue With Github'
         icon={AiFillGithub}
-        onClick={() => {} }
+        onClick={() => signIn('github')}
       />
       <div className='text-neutral-500 text-center mt-4 font-light'>
         <p>Already have an account?
@@ -126,4 +124,4 @@ const RegisterModal = () => {
   )
 }
 
-export default RegisterModal
+export default RegisterModal  

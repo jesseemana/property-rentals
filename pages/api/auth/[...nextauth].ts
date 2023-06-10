@@ -21,8 +21,8 @@ export const authOptions: AuthOptions = {
         CredentialsProvider({
             name: 'credentials',
             credentials: {
-                email: {label: 'email', type: 'text' },
-                password: {label: 'password', type: 'password' }
+                email: { label: 'email', type: 'text' },
+                password: { label: 'password', type: 'password' }
             },
             async authorize(credentials) {
                 // VERIFY CREDENTIALS PROVIDED

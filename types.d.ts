@@ -62,6 +62,8 @@ interface InputProps {
   errors: FieldErrors
 }
 
-
+interface AvatarProps {
+  src: string | null | undefined
+}
 
 
