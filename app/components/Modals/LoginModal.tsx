@@ -20,8 +20,9 @@ import { useRouter } from 'next/navigation'
 
 const LoginModal = () => {
   const [isLoading, setIsLoading] = useState(false)
-  const loginModal = useLoginModal()
+
   const router = useRouter()
+  const loginModal = useLoginModal()
 
   // useForm from react-hook-form
   const { register, handleSubmit, formState: { errors } } = useForm<FieldValues>({ 
