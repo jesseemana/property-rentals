@@ -6,10 +6,6 @@ import { useRouter } from 'next/navigation'
 const Logo = () => {
   const router = useRouter()
 
-  // const goHome = () => {
-  //   router.push('/')
-  // }
-
   return (
     <Image
       alt='logo'

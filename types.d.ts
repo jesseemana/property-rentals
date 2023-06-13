@@ -1,14 +1,14 @@
 type ContainerProps = {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 type ClientOnlyProps = {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 type MenuItemProps = {
-    onClick: () => void
-    label: string
+  onClick: () => void
+  label: string
 }
 
 type ModalProps = {
@@ -66,4 +66,8 @@ interface AvatarProps {
   src: string | null | undefined
 }
 
-
+interface CategoryBoxProps {
+  icon: IconType
+  label: string
+  selected?: boolean
+}
