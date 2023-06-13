@@ -3,7 +3,7 @@
 import axios from 'axios'
 import { AiFillGithub } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 
@@ -20,7 +20,6 @@ const RegisterModal = () => {
   const [isLoading, setIsLoading] = useState(false)
   const registerModal = useRegisterModal()
 
-
   // useForm from react-hook-form
   const { register, handleSubmit, formState: { errors } } = useForm<FieldValues>({ 
     defaultValues: {
@@ -29,7 +28,6 @@ const RegisterModal = () => {
       password: ''
     },
   })
-
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true)
