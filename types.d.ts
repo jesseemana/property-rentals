@@ -45,6 +45,12 @@ interface LoginModalStore {
   onClose: () => void;
 }
 
+interface RentalModalStore {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}
+
 interface HeadingProps {
   title: string;
   subtitle?: string;
