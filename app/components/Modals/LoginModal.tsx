@@ -1,13 +1,11 @@
 'use client'
 
-import axios from 'axios'
 import { signIn } from 'next-auth/react'
 import { AiFillGithub } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 import { useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
-
 
 import Modal from './Modal'
 import Heading from '../Heading'
@@ -34,12 +32,10 @@ const LoginModal = () => {
     },
   })
 
-
   const onToggle = () => {
     loginModal.onClose()
     registerModal.onOpen()
   } 
-
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true)
@@ -49,17 +45,17 @@ const LoginModal = () => {
       redirect: false
     })
     .then((callback) => {
-        setIsLoading(false)
+      setIsLoading(false)
 
-        if(callback?.ok) {
-          toast.success('Logged In')
-          router.refresh()
-          loginModal.onClose()
-        }
+      if(callback?.ok) {
+        toast.success('Logged In')
+        router.refresh()
+        loginModal.onClose()
+      }
 
-        if(callback?.error) {
-          toast.error(callback.error)
-        }
+      if(callback?.error) {
+        toast.error(callback.error)
+      }
     })
   }
 
