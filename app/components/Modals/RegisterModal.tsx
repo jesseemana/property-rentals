@@ -12,12 +12,15 @@ import Heading from '../Heading'
 import Input from '../../inputs/Input'
 import Button from '../Button'
 
+import useLoginModal from '@/app/hooks/useLoginModal'
 import useRegisterModal from '@/app/hooks/useRegisterModal'
 import { signIn } from 'next-auth/react'
 
 
 const RegisterModal = () => {
   const [isLoading, setIsLoading] = useState(false)
+
+  const loginModal = useLoginModal()
   const registerModal = useRegisterModal()
 
   // useForm from react-hook-form
@@ -29,21 +32,26 @@ const RegisterModal = () => {
     },
   })
 
+  const onToggle = () => {
+    registerModal.onClose()
+    loginModal.onOpen()
+  }
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true)
 
     axios.post('/api/register', data)
-    .then(() => {
-      toast.success('Registered!')
-      registerModal.onClose()
-    })
-    .catch((error) => {
-      toast.error('Something Went Wrong!')
-      console.log(error)
-    })
-    .finally(() => {
-      setIsLoading(false)
-    })
+      .then(() => {
+        toast.success('Registered!')
+        registerModal.onClose()
+      })
+      .catch((error) => {
+        toast.error('Something Went Wrong!')
+        console.log(error)
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
 
   const bodyContent = (
@@ -98,8 +106,8 @@ const RegisterModal = () => {
       <div className='text-neutral-500 text-center mt-4 font-light'>
         <p>Already have an account?
           <span 
-            // onClick={onToggle} 
-            className='text-neutral-800 cursor-pointer hover:underline'
+            onClick={onToggle} 
+            className='text-neutral-800 cursor-pointer ml-1 hover:underline'
           > 
             Log in
           </span>

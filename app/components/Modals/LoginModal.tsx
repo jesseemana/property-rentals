@@ -15,6 +15,7 @@ import Input from '../../inputs/Input'
 import Button from '../Button'
 
 import useLoginModal from '@/app/hooks/useLoginModal'
+import useRegisterModal from '@/app/hooks/useRegisterModal'
 import { useRouter } from 'next/navigation'
 
 
@@ -23,6 +24,7 @@ const LoginModal = () => {
 
   const router = useRouter()
   const loginModal = useLoginModal()
+  const registerModal = useRegisterModal()
 
   // useForm from react-hook-form
   const { register, handleSubmit, formState: { errors } } = useForm<FieldValues>({ 
@@ -33,8 +35,14 @@ const LoginModal = () => {
   })
 
 
+  const onToggle = () => {
+    loginModal.onClose()
+    registerModal.onOpen()
+  } 
+
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    setIsLoading(true);
+    setIsLoading(true)
 
     signIn('credentials', {
       ...data,
@@ -97,12 +105,12 @@ const LoginModal = () => {
         onClick={() => signIn('github')}
       />
       <div className='text-neutral-500 text-center mt-4 font-light'>
-        <p>Already have an account?
+        <p>New to Airbnb?
           <span 
-            // onClick={onToggle} 
-            className='text-neutral-800 cursor-pointer hover:underline'
+            onClick={onToggle} 
+            className='text-neutral-800 ml-1 cursor-pointer hover:underline'
           > 
-            Log in
+            Register
           </span>
         </p>
       </div>
