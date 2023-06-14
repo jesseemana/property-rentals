@@ -18,10 +18,12 @@ interface UserMenuProps {
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
+  const [isOpen, setIsOpen] = useState(false)
+
   const loginModal = useLoginModal()
   const rentModal = useRentalModal()
   const registerModal = useRegisterModal()
-  const [isOpen, setIsOpen] = useState(false)
+  
 
   const toggleOpen = useCallback(() => {
     setIsOpen((prev) => !prev)
