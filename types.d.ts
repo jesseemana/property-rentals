@@ -77,3 +77,10 @@ interface CategoryBoxProps {
   label: string
   selected?: boolean
 }
+
+interface CategoryInputProps {
+  icon: IconType
+  label: string
+  selected?: boolean
+  onClick: (value: string) => void
+}
