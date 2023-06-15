@@ -6,6 +6,7 @@ type ClientOnlyProps = {
   children: React.ReactNode
 }
 
+
 type MenuItemProps = {
   onClick: () => void
   label: string
@@ -104,5 +105,12 @@ interface CounterProps {
 interface ImageUploadProps {
   onChange: (value: string) => void
   value: string
+}
+
+
+interface EmptyStateProps {
+  title?: string
+  subtitle?: string
+  showReset?: boolean
 }
 
