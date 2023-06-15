@@ -9,7 +9,7 @@ declare global {
   var cloudinary: any
 }
 
-const uploadPreset = 'pgc9ehd5'
+const uploadPreset = 'pgc9ehd5' // GET YOUR OWN PRESET FROM CLOUDINARY AFTER SIGNING UP
 
 const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
   const handleUpload = (result: any) => {
