@@ -14,10 +14,8 @@ const Counter: React.FC<CounterProps> = ({ title, subtitle, value, onChange }) =
   return (
     <div className='flex flex-row items-center justify-between'>
       <div className='flex flex-col'>
-        <div className='font-medium'>{title}</div>
-        <div className='font-light text-gray-600'>
-          {subtitle}
-        </div>
+        <h1 className='font-medium'> {title} </h1>
+        <p className='font-light text-gray-600'> {subtitle} </p>
       </div>
       <div className='flex flex-row items-center gap-4'>
         <div 
