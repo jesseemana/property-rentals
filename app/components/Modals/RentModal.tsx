@@ -59,7 +59,8 @@ const RentModal = () => {
     // A WAY OF  DYNAMICALLY IMPORTING MAP TO HAVE IT WORKING IN NEXT USING 'next/dynamic'
     const Map = useMemo(() => dynamic(() => import('../Map'), {
         ssr: false
-    }), [location])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }), [location]) 
 
     const setCustomValue = (id: string, value: any) => {
         setValue(id, value, {
