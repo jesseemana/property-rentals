@@ -13,7 +13,7 @@ import CategoryInput from '@/app/inputs/CategoryInput'
 import dynamic from 'next/dynamic'
 import Counter from '@/app/inputs/Counter'
 import ImageUpload from '@/app/inputs/ImageUpload'
-import Input from '@/app/inputs/Input';
+import Input from '@/app/inputs/Input'
 
 enum STEPS {
     CATEGORY = 0,
@@ -168,7 +168,7 @@ const RentModal = () => {
         )
     }
 
-    
+
     if(step === STEPS.DESCRIPTION) {
         bodyContent = (
             <div className='flex flex-col gap-8'>
@@ -188,6 +188,28 @@ const RentModal = () => {
                 <Input
                     id='description'
                     label='Description'
+                    disabled={isLoading}
+                    register={register}
+                    errors={errors}
+                    required
+                />
+            </div>
+        )
+    }
+
+
+    if (step === STEPS.PRICE) {
+        bodyContent = (
+            <div className='flex flex-col gap-8'>
+                <Heading
+                    title='Now, set your price'
+                    subtitle='How much do you charge per night?'
+                />
+                <Input
+                    id='price'
+                    label='Price'
+                    formatPrice 
+                    type='number' 
                     disabled={isLoading}
                     register={register}
                     errors={errors}
