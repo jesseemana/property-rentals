@@ -12,59 +12,59 @@ type MenuItemProps = {
 }
 
 type ModalProps = {
-  isOpen?: boolean;
-  onClose: () => void;
-  onSubmit: () => void;
-  title?: string;
-  body?: React.ReactElement;
-  footer?: React.ReactElement;
-  actionLabel: string;
-  disabled?: boolean;
-  secondaryAction?: () => void;
-  secondaryActionLabel?: string;
+  isOpen?: boolean
+  onClose: () => void
+  onSubmit: () => void
+  title?: string
+  body?: React.ReactElement
+  footer?: React.ReactElement
+  actionLabel: string
+  disabled?: boolean
+  secondaryAction?: () => void
+  secondaryActionLabel?: string
 }
 
 type ButtonProps = {
-  label: string;
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  disabled?: boolean;
-  outline?: boolean;
-  small?: boolean;
-  icon?: IconType;
+  label: string
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
+  disabled?: boolean
+  outline?: boolean
+  small?: boolean
+  icon?: IconType
 }
 
 interface RegisterModalStore {
-  isOpen: boolean;
-  onOpen: () => void;
-  onClose: () => void;
+  isOpen: boolean
+  onOpen: () => void
+  onClose: () => void
 }
 
 interface LoginModalStore {
-  isOpen: boolean;
-  onOpen: () => void;
-  onClose: () => void;
+  isOpen: boolean
+  onOpen: () => void
+  onClose: () => void
 }
 
 interface RentalModalStore {
-  isOpen: boolean;
-  onOpen: () => void;
-  onClose: () => void;
+  isOpen: boolean
+  onOpen: () => void
+  onClose: () => void
 }
 
 interface HeadingProps {
-  title: string;
-  subtitle?: string;
-  center?: boolean;
+  title: string
+  subtitle?: string
+  center?: boolean
 }
 
 interface InputProps {
-  id: string;
-  label: string;
-  type?: string;
-  disabled?: boolean;
-  formatPrice?: boolean;
-  required?: boolean;
-  register: UseFormRegister<FieldValues>,
+  id: string
+  label: string
+  type?: string
+  disabled?: boolean
+  formatPrice?: boolean
+  required?: boolean
+  register: UseFormRegister<FieldValues>
   errors: FieldErrors
 }
 
@@ -84,3 +84,20 @@ interface CategoryInputProps {
   selected?: boolean
   onClick: (value: string) => void
 }
+
+interface CounterProps {
+  title: string
+  subtitle: string
+  value: number
+  onChange: (value: number) => void
+}
+
+// interface CounterProps {
+//   props: {
+//     title: string;
+//     subtitle: string;
+//     value: number;
+//     onChange: (value: number) => void;
+//   }
+// }
+
