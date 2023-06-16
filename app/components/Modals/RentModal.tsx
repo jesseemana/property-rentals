@@ -35,7 +35,7 @@ const RentModal = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [step, setStep] = useState(STEPS.CATEGORY)
 
-    const { register, handleSubmit, setValue, watch, formState: {  errors,}, reset, } = useForm<FieldValues>({
+    const { register, handleSubmit, setValue, watch, formState: { errors,}, reset, } = useForm<FieldValues>({
         defaultValues: {
             category: '',
             location: null,
@@ -51,10 +51,10 @@ const RentModal = () => {
 
     const category = watch('category')
     const location = watch('location')
-    const guestCount = watch('guestCount')
-    const roomCount = watch('roomCount')
-    const bathroomCount = watch('bathroomCount')
     const imageSrc = watch('imageSrc')
+    const roomCount = watch('roomCount')
+    const guestCount = watch('guestCount')
+    const bathroomCount = watch('bathroomCount')
 
     // A WAY OF  DYNAMICALLY IMPORTING MAP TO HAVE IT WORKING IN NEXT USING 'next/dynamic'
     const Map = useMemo(() => dynamic(() => import('../Map'), {
@@ -126,7 +126,7 @@ const RentModal = () => {
     )
 
 
-    if(step === STEPS.LOCATION) {
+    if (step === STEPS.LOCATION) {
         bodyContent = (
             <div className="flex flex-col gap-8">
                 <Heading
@@ -143,7 +143,7 @@ const RentModal = () => {
     }
 
 
-    if(step === STEPS.INFO) {
+    if (step === STEPS.INFO) {
         bodyContent = (
             <div className='flex flex-col gap-8'>
                 <Heading
@@ -176,7 +176,7 @@ const RentModal = () => {
     }
 
 
-    if(step === STEPS.IMAGES) {
+    if (step === STEPS.IMAGES) {
         bodyContent = (
             <div className='flex flex-col gap-8'>
                 <Heading
@@ -192,7 +192,7 @@ const RentModal = () => {
     }
 
 
-    if(step === STEPS.DESCRIPTION) {
+    if (step === STEPS.DESCRIPTION) {
         bodyContent = (
             <div className='flex flex-col gap-8'>
                 <Heading
@@ -242,7 +242,7 @@ const RentModal = () => {
         )
     }
 
-    return(
+    return (
         <Modal
             isOpen={rentModal.isOpen}
             onClose={rentModal.onClose}
