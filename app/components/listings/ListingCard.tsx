@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation'
 import { useMemo } from 'react'
 import { format } from 'date-fns'
 import Image from 'next/image'
+import Button from '../Button'
+import HeartButton from '../HeartButton';
 
 interface ListingCardProps {
   data: SafeListing
@@ -63,12 +65,34 @@ const ListingCard: React.FC<ListingCardProps> = ({
       <div className='flex flex-col gap-2 w-full'>
         <div className='aspect-square w-full relative overflow-hidden rounded-xl'>
           <Image 
-          fill
-          className='object-cover h-full w-full group-hover:scale-110 transition'
-          src={data.imageSrc}
-          alt='Listing'
+            fill
+            className='object-cover h-full w-full group-hover:scale-110 transition'
+            src={data.imageSrc}
+            alt='Listing'
           />
+          <div className='absolute top-3 right-3'>
+            <HeartButton 
+              listingId={data.id} 
+              currentUser={currentUser}
+            />
+          </div>
         </div>
+        <p className='font-semibold text-lg'>{location?.region}, {location?.label}</p>
+        <p className='font-light text-neutral-500'>{reservationDate || data.category}</p>
+        <div className='flex flex-row items-center gap-1'>
+          <p className='font-semibold'>${price}</p>
+          {!reservation && (
+            <p className='font-light'>night</p>
+          )}
+        </div>
+        {onAction && actionLabel && (
+          <Button
+            disabled={disabled}
+            small
+            label={actionLabel} 
+            onClick={handleCancel}
+          />
+        )}
       </div>
     </div>
   )

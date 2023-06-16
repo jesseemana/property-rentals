@@ -11,7 +11,7 @@ import Heading from '../Heading'
 import CountrySelect from '@/app/components/Inputs/CountrySelect'
 import CategoryInput from '@/app/components/Inputs/CategoryInput'
 import dynamic from 'next/dynamic'
-import Counter from '@/app/components/Inputs/Counter'
+import Counter from '@/app/components/Counter'
 import ImageUpload from '@/app/components/Inputs/ImageUpload'
 import Input from '@/app/components/Inputs/Input'
 
