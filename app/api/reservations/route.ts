@@ -10,9 +10,9 @@ export async function POST(request: Request) {
 
     const body = await request.json()
 
-    const { listingId, startDate, endDate, price } = body
+    const { listingId, startDate, endDate, totalPrice } = body
 
-    if(!listingId || !startDate || !endDate || !price) return NextResponse.error()
+    if(!listingId || !startDate || !endDate || !totalPrice) return NextResponse.error()
 
     const listingAndReservation = await prisma.listing.update({
         where: {

@@ -117,3 +117,8 @@ interface IParams {
   listingId?: string
 }
 
+interface IParams {
+  listingId?: string
+  userId?: string
+  authorId?: string
+}
