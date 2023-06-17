@@ -107,10 +107,13 @@ interface ImageUploadProps {
   value: string
 }
 
-
 interface EmptyStateProps {
   title?: string
   subtitle?: string
   showReset?: boolean
+}
+
+interface IParams {
+  listingId?: string
 }
 
