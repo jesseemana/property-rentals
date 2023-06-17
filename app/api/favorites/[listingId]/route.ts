@@ -16,7 +16,7 @@ export async function POST(request: Request, { params }: { params: Iparams } ) {
 
     if(!listingId || typeof listingId !== 'string') throw new Error('Invalid ID')
 
-    let favoriteIds = [...(currentUsers.favoriteIds || [])]
+    let favoriteIds = [...(currentUser.favoriteIds || [])]
 
     favoriteIds.push(listingId)
 
@@ -41,7 +41,7 @@ export async function DELETE(request: Request, { params }: { params: Iparams }) 
 
     if(!listingId || typeof listingId !== 'string') throw new Error('Invalid ID')
 
-    let favoriteIds = [...(currentUsers.favoriteIds || [])]
+    let favoriteIds = [...(currentUser.favoriteIds || [])]
 
     favoriteIds = favoriteIds.filter((id) => id !== listingId)
 
