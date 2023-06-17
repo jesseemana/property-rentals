@@ -8,7 +8,7 @@ export default async function getReservations(params: IParams) {
         
     if (listingId) {
       query.listingId = listingId
-    };
+    }
 
     if (userId) {
       query.userId = userId
@@ -28,8 +28,7 @@ export default async function getReservations(params: IParams) {
       }
     })
 
-    const safeReservations = reservations.map(
-      (reservation) => ({
+    const safeReservations = reservations.map((reservation) => ({
         ...reservation,
         createdAt: reservation.createdAt.toISOString(),
         startDate: reservation.startDate.toISOString(),
