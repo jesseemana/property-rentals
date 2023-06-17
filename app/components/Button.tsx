@@ -1,13 +1,6 @@
 'use client'
 
-const Button: React.FC<ButtonProps> = ({
-  label, 
-  onClick, 
-  disabled, 
-  outline,
-  small,
-  icon: Icon,
-}) => {
+const Button: React.FC<ButtonProps> = ({label, onClick, disabled, outline, small, icon: Icon,}) => {
   return (
     <button
       disabled={disabled}
@@ -17,9 +10,7 @@ const Button: React.FC<ButtonProps> = ({
         ${outline ? 'border-black text-black bg-white' : 'bg-rose-500 border-rose-500 text-white'} 
         ${small ? 'text-sm py-1 font-light border-[1px]' : 'text-md py-3 font-semibold border-2'}`} 
     >
-      {Icon && (
-        <Icon size={24} className='absolute left-4 top-3'/>
-      )}
+      {Icon && ( <Icon size={24} className='absolute left-4 top-3' /> )}
       {label}
     </button>
   )
