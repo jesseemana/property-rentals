@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-const useRentalModal = create<RentalModalStore>((set) => ({
+const useRentalModal = create<CustomModalStore>((set) => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false })

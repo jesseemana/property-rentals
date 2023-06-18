@@ -33,19 +33,7 @@ type ButtonProps = {
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-interface RegisterModalStore {
-  isOpen: boolean
-  onOpen: () => void
-  onClose: () => void
-}
-
-interface LoginModalStore {
-  isOpen: boolean
-  onOpen: () => void
-  onClose: () => void
-}
-
-interface RentalModalStore {
+interface CustomModalStore {
   isOpen: boolean
   onOpen: () => void
   onClose: () => void
@@ -55,17 +43,6 @@ interface HeadingProps {
   title: string
   center?: boolean
   subtitle?: string
-}
-
-interface InputProps {
-  id: string
-  label: string
-  type?: string
-  disabled?: boolean
-  required?: boolean
-  errors: FieldErrors
-  formatPrice?: boolean
-  register: UseFormRegister<FieldValues>
 }
 
 interface AvatarProps {
@@ -109,3 +86,4 @@ interface IParams {
   listingId?: string
   reservationId?: string
 }
+
