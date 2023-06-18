@@ -3,10 +3,6 @@ import { NextResponse } from 'next/server'
 import getCurrentUser from '@/app/actions/getCurrentUser'
 import prisma from '@/app/libs/prismadb'
 
-interface Iparams {
-    listingId?: string
-}
-
 export async function POST(request: Request, { params }: { params: Iparams } ) {
     const currentUser = await getCurrentUser()
 

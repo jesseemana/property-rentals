@@ -1,17 +1,16 @@
 import getCurrentUser from '../actions/getCurrentUser'
-import getLisitings from '../actions/getListings'
+import FavoritesClient from './FavoritesClient'
 
 import ClientOnly from '../components/ClientOnly'
 import EmptyState from '../components/EmptyState'
-import FavoritesClient from './FavoritesClient'
 
 const FavoritesPage = async () => {
-  const listings = await getLisitings()
+  const listings = await getFavoriteListings()
   const currentUser = await getCurrentUser()
 
   let content
 
-  if(listings.length === 0) {
+  if (listings.length === 0) {
     content = ( 
       <ClientOnly>
         <EmptyState 
@@ -34,4 +33,4 @@ const FavoritesPage = async () => {
   return content
 }
 
-export default FavoritesPage
+export default FavoritesPage    
