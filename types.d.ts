@@ -6,32 +6,31 @@ type ClientOnlyProps = {
   children: React.ReactNode
 }
 
-
 type MenuItemProps = {
-  onClick: () => void
   label: string
+  onClick: () => void
 }
 
 type ModalProps = {
+  title?: string
   isOpen?: boolean
+  disabled?: boolean
+  actionLabel: string
   onClose: () => void
   onSubmit: () => void
-  title?: string
   body?: React.ReactElement
   footer?: React.ReactElement
-  actionLabel: string
-  disabled?: boolean
   secondaryAction?: () => void
   secondaryActionLabel?: string
 }
 
 type ButtonProps = {
   label: string
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
-  disabled?: boolean
-  outline?: boolean
-  small?: boolean
   icon?: IconType
+  small?: boolean
+  outline?: boolean
+  disabled?: boolean
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 interface RegisterModalStore {
@@ -54,8 +53,8 @@ interface RentalModalStore {
 
 interface HeadingProps {
   title: string
-  subtitle?: string
   center?: boolean
+  subtitle?: string
 }
 
 interface InputProps {
@@ -63,10 +62,10 @@ interface InputProps {
   label: string
   type?: string
   disabled?: boolean
-  formatPrice?: boolean
   required?: boolean
-  register: UseFormRegister<FieldValues>
   errors: FieldErrors
+  formatPrice?: boolean
+  register: UseFormRegister<FieldValues>
 }
 
 interface AvatarProps {
@@ -74,37 +73,28 @@ interface AvatarProps {
 }
 
 interface CategoryBoxProps {
-  icon: IconType
   label: string
+  icon: IconType
   selected?: boolean
 }
 
 interface CategoryInputProps {
-  icon: IconType
   label: string
+  icon: IconType
   selected?: boolean
   onClick: (value: string) => void
 }
 
 interface CounterProps {
+  value: number
   title: string
   subtitle: string
-  value: number
   onChange: (value: number) => void
 }
 
-// interface CounterProps {
-//   props: {
-//     title: string;
-//     subtitle: string;
-//     value: number;
-//     onChange: (value: number) => void;
-//   }
-// }
-
 interface ImageUploadProps {
-  onChange: (value: string) => void
   value: string
+  onChange: (value: string) => void
 }
 
 interface EmptyStateProps {
@@ -114,11 +104,8 @@ interface EmptyStateProps {
 }
 
 interface IParams {
-  listingId?: string
-}
-
-interface IParams {
-  listingId?: string
   userId?: string
   authorId?: string
+  listingId?: string
+  reservationId?: string
 }
