@@ -3,8 +3,8 @@
 import Avatar from '../Avatar'
 import MenuItem from './MenuItem'
 
-import { AiOutlineMenu } from 'react-icons/ai'
 import { useState, useCallback } from 'react'
+import { AiOutlineMenu } from 'react-icons/ai'
 
 import useRegisterModal from '@/app/hooks/useRegisterModal'
 import useLoginModal from '@/app/hooks/useLoginModal'
@@ -12,28 +12,35 @@ import useRentalModal from '@/app/hooks/useRentalModal'
 
 import { signOut } from 'next-auth/react'
 import { SafeUser } from '@/app/types'
+import { useRouter } from 'next/navigation'
 
 interface UserMenuProps {
   currentUser?: SafeUser | null
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
+  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
 
   const loginModal = useLoginModal()
   const rentModal = useRentalModal()
   const registerModal = useRegisterModal()
   
+  const toggleOpen = () => setIsOpen((prev) => !prev)
 
-  const toggleOpen = useCallback(() => {
-    setIsOpen((prev) => !prev)
-  }, [])
+  const onRent = () => {
+    if(!currentUser) return loginModal.onOpen()
 
+    rentModal.onOpen()
+  }
+
+  /*
   const onRent = useCallback(() => {
     if(!currentUser) return loginModal.onOpen()
 
     rentModal.onOpen()
   }, [currentUser, loginModal, rentModal])
+  */
 
   return (
     <div className='relative'>
