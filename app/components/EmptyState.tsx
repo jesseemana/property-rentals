@@ -1,13 +1,13 @@
 'use client'
    
-import { useRouter } from 'next/navigation'
-import Heading from './Heading'
 import Button from './Button'
+import Heading from './Heading'
+import { useRouter } from 'next/navigation'
 
 const EmptyState: React.FC<EmptyStateProps> = ({
+  showReset,
   title = 'No exact matches',
   subtitle = 'Try changing or removing some of your filters.',
-  showReset
 }) => {
   const router = useRouter()
   
@@ -22,7 +22,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({
         {showReset && (
           <Button
             outline
-            label="Remove all filters"
+            label='Remove all filters'
             onClick={() => router.push('/')}
           />
         )}
@@ -31,4 +31,4 @@ const EmptyState: React.FC<EmptyStateProps> = ({
   )
 }
 
-export default EmptyState
+export default EmptyState 

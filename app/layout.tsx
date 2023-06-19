@@ -3,7 +3,6 @@
 import './globals.css'
 import Navbar from './components/Navbar/Navbar'
 import ClientOnly from './components/ClientOnly'
-
 import RentModal from './components/Modals/RentModal'
 import LoginModal from './components/Modals/LoginModal'
 import SearchModal from './components/Modals/SearchModal'
@@ -27,18 +26,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en">
       <body className=''>
       {/* <body className={font.className}> */}
-        <div className="">
-          <ClientOnly>
-            <ToasterProvider />
-            <SearchModal />
-            <RentModal />
-            <LoginModal />
-            <RegisterModal />
-            <Navbar currentUser={currentUser} />
-          </ClientOnly>
-          <div className='pb-20 pt-8'>
-            {children}
-          </div>
+        <ClientOnly>
+          <ToasterProvider />
+          <SearchModal />
+          <RentModal />
+          <LoginModal />
+          <RegisterModal />
+          <Navbar currentUser={currentUser} />
+        </ClientOnly>
+        <div className='pb-20 pt-8'>
+          {children}
         </div>
       </body>
     </html>

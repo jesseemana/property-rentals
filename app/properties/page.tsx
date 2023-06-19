@@ -6,6 +6,11 @@ import EmptyState from '@/app/components/EmptyState'
 
 import PropertiesClient from './PropertiesClient'
 
+export const metadata = {
+  title: 'Properties',
+  description: 'Your properties page'
+}
+
 const PropertiesPage = async () => {
   const currentUser = await getCurrentUser()
 

@@ -67,7 +67,7 @@ const SearchModal = () => {
       bathroomCount
     }
 
-     if (dateRange.startDate) {
+    if (dateRange.startDate) {
       updatedQuery.startDate = formatISO(dateRange.startDate)
     }
 

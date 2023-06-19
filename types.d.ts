@@ -16,12 +16,12 @@ type ModalProps = {
   isOpen?: boolean
   disabled?: boolean
   actionLabel: string
-  onClose: () => void
-  onSubmit: () => void
   body?: React.ReactElement
   footer?: React.ReactElement
-  secondaryAction?: () => void
   secondaryActionLabel?: string
+  onClose: () => void
+  onSubmit: () => void
+  secondaryAction?: () => void
 }
 
 type ButtonProps = {
@@ -87,3 +87,17 @@ interface IParams {
   reservationId?: string
 }
 
+interface IListingParams {
+  userId?: string
+  guestCount?: number
+  roomCount?: number
+  bathroomCount?: number
+  startDate?: string
+  endDate?: string
+  locationValue?: string
+  category?: string
+}
+
+interface HomeProps { 
+  searchParams: IListingParams 
+}
