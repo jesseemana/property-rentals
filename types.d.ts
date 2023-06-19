@@ -101,3 +101,7 @@ interface IListingParams {
 interface HomeProps { 
   searchParams: IListingParams 
 }
+
+interface ErrorStateProps {
+  error: Error
+}
